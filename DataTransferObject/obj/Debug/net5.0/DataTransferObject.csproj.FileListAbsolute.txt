@@ -1,0 +1,5 @@
+C:\Users\Asus\Documents\MoviesAPI\DataTransferObject\obj\Debug\net5.0\DataTransferObject.csproj.AssemblyReference.cache
+C:\Users\Asus\Documents\MoviesAPI\DataTransferObject\obj\Debug\net5.0\DataTransferObject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\Documents\MoviesAPI\DataTransferObject\obj\Debug\net5.0\DataTransferObject.AssemblyInfoInputs.cache
+C:\Users\Asus\Documents\MoviesAPI\DataTransferObject\obj\Debug\net5.0\DataTransferObject.AssemblyInfo.cs
+C:\Users\Asus\Documents\MoviesAPI\DataTransferObject\obj\Debug\net5.0\DataTransferObject.csproj.CoreCompileInputs.cache
