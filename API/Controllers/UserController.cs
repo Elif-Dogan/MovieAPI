@@ -1,7 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using DataTransferObject.User;
+using DataTransferObject.Login;
 using DomainService.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -28,12 +28,12 @@ namespace API.Controllers
         /// </summary>
         [AllowAnonymous]
         [HttpPost("/Login")]
-        public IActionResult Login(DTOUserIstek _userIstek)
+        public IActionResult Login(DTOLoginTokenIstek _userIstek)
         {
             try
             {
                 DomainUser _userLogin = new DomainUser();
-                DTOUser _user = _userLogin.UserGetToken(_userIstek);
+                DTOLoginToken _user = _userLogin.UserGetRequestToken(_userIstek);
                 
                 if (_userIstek.KullaniciAdi != null && _userIstek.Sifre !=null)
                 {
