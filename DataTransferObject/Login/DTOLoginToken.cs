@@ -5,5 +5,7 @@ namespace DataTransferObject.Login
         public bool success { get; set; }
         public string expires_at { get; set; }
         public string request_token { get; set; }
+        public string BearerToken { get; set; }
+
     }
 }

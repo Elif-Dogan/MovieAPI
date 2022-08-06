@@ -5,6 +5,6 @@ namespace DataTransferObject.Login
     public class DTOLoginSessionIstek
     {
         [Required(ErrorMessage = "Request token giriniz!")]
-        public string RequestToken { get; set; }
+        public string request_token { get; set; }
     }
 }
