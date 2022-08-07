@@ -9,7 +9,6 @@ namespace API.Controllers
     [ApiController]
     public class MovieController : ControllerBase
     {
-        [AllowAnonymous]
         [HttpGet("GetMovies/{page}")]
         public IActionResult GetMovies(int page)
         {
@@ -18,6 +17,49 @@ namespace API.Controllers
                 DomainMovie _account = new DomainMovie();
                 return Ok(_account.GetMovies(page));
 
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        
+        [HttpGet("GetMovieById/movieId")]
+        public IActionResult GetMovieById(int movieId)
+        {
+            try
+            {
+                DomainMovie _account = new DomainMovie();
+                return Ok(_account.GetMovieById(movieId));
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("/RateMovie")]
+        public IActionResult RateMovie(DTOMovieRateIstek _userIstek)
+        {
+            try
+            {
+                DomainMovie _userLogin = new DomainMovie();
+                return Ok(_userLogin.RateMovie(_userIstek));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("/RecommendMovie")]
+        public IActionResult RecommendMovie(DTOMovieRecommendIstek _userIstek)
+        {
+            try
+            {
+                DomainMovie _userLogin = new DomainMovie();
+                return Ok(_userLogin.MovieRecommend(_userIstek));
             }
             catch (Exception ex)
             {
