@@ -4,6 +4,8 @@ using System.Net.Mail;
 using System.Text;
 using DataTransferObject.Movie;
 using DataTransferObject.User;
+using MimeKit;
+using MimeKit.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -77,18 +79,36 @@ namespace DomainService.Movie
         {
             try
             {
-                // DTOMovieById _movie = GetMovieById(_userIstek.MovieId);
-                // if(_movie !=null)
-                // {
-                //     var smtpClient = new SmtpClient("smtp.gmail.com")
-                //     {
-                //         Port = 587,
-                //         Credentials = new NetworkCredential("", "password"),
-                //         EnableSsl = true,
-                //     };
-    
-                //     smtpClient.Send("email", "recipient", "subject", "body");
-                // }
+                DTOMovieById _movie = GetMovieById(_userIstek.MovieId);  
+                string _movieLink= (string)_config["MovieLink"]+_movie.id;
+                if(_movie !=null)
+                {
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                    var mailMessage = new MimeMessage();
+                    mailMessage.From.Add(new MailboxAddress("Recommender",(string)_config["From"]));
+                    mailMessage.To.Add(new MailboxAddress("Movie",_userIstek.Email));
+                    mailMessage.Subject = "New Recommend: ***"+_movie.original_title+"***";
+                    mailMessage.Body = new TextPart(TextFormat.Plain)
+                    {
+                         Text = "Hi! I recommend you this film:\n"+"Title:"
+                                +_movie.original_title+"\nVote Average:"+_movie.vote_average
+                                +"\nOverview:"+_movie.overview+"\nLink:"+_movieLink
+                    };
+
+                    using (var smtpClient = new MailKit.Net.Smtp.SmtpClient())
+                    {
+                        smtpClient.Connect((string)_config["SmtpServer"],(int)_config["Port"],false);                   
+                        smtpClient.Authenticate((string)_config["From"],(string)_config["Password"]);                   
+                        smtpClient.Send(mailMessage);
+                        smtpClient.Disconnect(true);
+
+                    }
+                    DTOMovieRecommend _dtoMovie= new DTOMovieRecommend();
+                    _dtoMovie.status=true;
+                    _dtoMovie.Message="Mail has been sent.";
+                    return _dtoMovie;
+                }
+                //else
                 return null;
           }
             catch (Exception ex)

@@ -24,7 +24,7 @@ namespace API.Controllers
             }
         }
         
-        [HttpGet("GetMovieById/movieId")]
+        [HttpGet("GetMovieById/{movieId}")]
         public IActionResult GetMovieById(int movieId)
         {
             try
@@ -52,7 +52,7 @@ namespace API.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
+[AllowAnonymous]
         [HttpPost("/RecommendMovie")]
         public IActionResult RecommendMovie(DTOMovieRecommendIstek _userIstek)
         {
@@ -60,6 +60,7 @@ namespace API.Controllers
             {
                 DomainMovie _userLogin = new DomainMovie();
                 return Ok(_userLogin.MovieRecommend(_userIstek));
+                    
             }
             catch (Exception ex)
             {

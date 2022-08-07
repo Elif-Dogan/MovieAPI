@@ -1,12 +1,12 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace DataTransferObject.Movie
 {
     public class DTOMovieRecommendIstek
     {      
+        [Required(ErrorMessage = "Movie Id giriniz!")]
         public int MovieId { get; set; }  
-        public string From { get; set; }
-        public string SmtpServer { get; set; }
-        public int Port { get; set; }
-        public string SenderMail { get; set; }
-        public string Password { get; set; }
+        [Required(ErrorMessage = "Email giriniz!")]
+        public string Email { get; set; }
     }
 }
