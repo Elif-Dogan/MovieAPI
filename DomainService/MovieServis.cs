@@ -1,6 +1,5 @@
 using System.Net.Http.Headers;
 using DataTransferObject.Movie;
-using DomainService.Movie;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 

@@ -109,7 +109,6 @@ namespace API
             }
             app.UseSession();
             app.UseCors(builder => builder
-                    // .WithOrigins("https://www.w3schools.com")
                     .AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader());
@@ -129,7 +128,7 @@ namespace API
             app.UseSwagger()
            .UseSwaggerUI(c =>
            {
-               c.SwaggerEndpoint("/swagger/v1/swagger.json", "Movies API V1.0.0+1");
+               c.SwaggerEndpoint("/swagger/v1/swagger.json", "Movies API V1.0.0");
            });
         }
     }

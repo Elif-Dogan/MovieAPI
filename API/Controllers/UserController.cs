@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using System;
-using DataTransferObject.User;
 using DomainService.User;
 
 namespace API.Controllers

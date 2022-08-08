@@ -1,9 +1,7 @@
 using System.Net;
 using System.Net.Http.Headers;
-using System.Net.Mail;
 using System.Text;
 using DataTransferObject.Movie;
-using DataTransferObject.User;
 using MimeKit;
 using MimeKit.Text;
 using Newtonsoft.Json;
