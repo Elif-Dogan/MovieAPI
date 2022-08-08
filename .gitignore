@@ -1,0 +1,16 @@
+DataTransferObject/bin/Debug/net6.0/DataTransferObject.dll
+DataTransferObject/bin/Debug/net6.0/DataTransferObject.pdb
+DataTransferObject/obj/Debug/net6.0/DataTransferObject.csproj.CoreCompileInputs.cache
+DataTransferObject/obj/Debug/net6.0/DataTransferObject.dll
+DataTransferObject/obj/Debug/net6.0/DataTransferObject.pdb
+DataTransferObject/obj/Debug/net6.0/ref/DataTransferObject.dll
+DataTransferObject/obj/Debug/net6.0/refint/DataTransferObject.dll
+DomainService/bin/Debug/net6.0/DataTransferObject.dll
+DomainService/bin/Debug/net6.0/DataTransferObject.pdb
+DomainService/bin/Debug/net6.0/DomainService.dll
+DomainService/bin/Debug/net6.0/DomainService.pdb
+DomainService/obj/Debug/net6.0/DomainService.csproj.AssemblyReference.cache
+DomainService/obj/Debug/net6.0/DomainService.dll
+DomainService/obj/Debug/net6.0/DomainService.pdb
+DomainService/obj/Debug/net6.0/ref/DomainService.dll
+DomainService/obj/Debug/net6.0/refint/DomainService.dll
