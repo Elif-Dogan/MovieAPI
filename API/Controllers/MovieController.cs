@@ -48,7 +48,6 @@ namespace API.Controllers
          /// <summary>
         /// Filme ait olan yorumları ve yazarları getirir.
         /// </summary>
-        [AllowAnonymous]
         [HttpGet("/GetMovieNotes/{movieId}")]
         public IActionResult GetMovieNotes(int movieId)
         {

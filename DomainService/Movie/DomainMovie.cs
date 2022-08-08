@@ -57,13 +57,33 @@ namespace DomainService.Movie
                 return null;
             }
         }
+        public DTOMovieNote GetNotesByMovieId(int movieId)
+        {
+            try
+            {
+                string url = _config["ServisAdres"] + "movie/"+movieId+"/reviews?api_key="+_config["api_key"];
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.hmrc.1.0+json"));
+                HttpResponseMessage response = client.GetAsync(url).Result;
+                string donenSonuc = response.Content.ReadAsStringAsync().Result;
+                var _data = JsonConvert.DeserializeObject<DTOMovieNote>(donenSonuc);
+                return _data;
+          }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+ 
         public DTOMovieRate RateMovie(DTOMovieRateIstek _movieIstek)
         {
             try
             {
+                DTOMovieRateIstekValue _dtoValue = new DTOMovieRateIstekValue();
+                _dtoValue.value= Convert.ToDouble(_movieIstek.Value);
                 string url = _config["ServisAdres"] + "movie/"+_movieIstek.MovieId+"/rating?api_key="+_config["api_key"]+"&session_id="+_movieIstek.SessionId;
                 client.DefaultRequestHeaders.Accept.Clear();
-                String jsonInString = JsonConvert.SerializeObject(_movieIstek.Value);
+                String jsonInString = JsonConvert.SerializeObject(_dtoValue);
                 var sonuc = client.PostAsync(url, new StringContent(jsonInString, Encoding.UTF8, "application/json"));
                 sonuc.Wait();
                 string donenSonuc = sonuc.Result.Content.ReadAsStringAsync().Result;
