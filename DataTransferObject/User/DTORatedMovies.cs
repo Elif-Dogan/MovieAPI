@@ -1,5 +1,5 @@
 namespace DataTransferObject.User
-{// Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+{
     public class Result
     {
         public bool adult { get; set; }

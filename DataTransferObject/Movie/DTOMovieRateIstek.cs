@@ -9,5 +9,8 @@ namespace DataTransferObject.Movie
         
         [Range(1, 10, ErrorMessage="Puan 1 ile 10 arasında bir sayı olmalı!")] 
         public int Value {get; set;}
+        
+        [StringLength(5, ErrorMessage="Geçerli bir not girin!")] 
+        public string Note {get; set;}
     }
 }

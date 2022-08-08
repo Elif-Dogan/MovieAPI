@@ -1,6 +1,5 @@
 namespace DataTransferObject.Movie
 {
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
     public class Genre
     {
         public int id { get; set; }
