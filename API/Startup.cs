@@ -35,7 +35,11 @@ namespace API
             services.AddMemoryCache();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Description = "NCTS Mobil", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Description = "MoviesAPI", Version = "v1" });
+                var fileName = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var filePath = Path.Combine(AppContext.BaseDirectory, fileName);
+                c.IncludeXmlComments(filePath);
+
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
 
                 {
@@ -125,7 +129,7 @@ namespace API
             app.UseSwagger()
            .UseSwaggerUI(c =>
            {
-               c.SwaggerEndpoint("/swagger/v1/swagger.json", "NCTS Mobil V1.0.0+1");
+               c.SwaggerEndpoint("/swagger/v1/swagger.json", "Movies API V1.0.0+1");
            });
         }
     }

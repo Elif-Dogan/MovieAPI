@@ -10,6 +10,10 @@ namespace API.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        /// <summary>
+        /// Kullanıcı account detaylarını getirir.
+        /// </summary>
+ 
         [HttpGet("GetAccountDetails/{session_id}")]
         public IActionResult GetAccountDetails(string session_id)
         {
@@ -24,6 +28,9 @@ namespace API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        /// <summary>
+        /// Kullanıcının puan verdiği filmleri getirir.
+        /// </summary>
         [HttpGet("GetRatedMovies/{session_id}/{account_id}")]
         public IActionResult GetRatedMovies(string session_id, int account_id)
         {

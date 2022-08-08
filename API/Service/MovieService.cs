@@ -14,7 +14,7 @@ namespace API.Service
                     servis.GetAllMovies();
                 }
                 catch (Exception ex) { }
-                await Task.Delay(TimeSpan.FromMilliseconds(3600000));
+                await Task.Delay(TimeSpan.FromSeconds(3600));
             }
         }
     }

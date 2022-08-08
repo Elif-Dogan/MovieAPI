@@ -32,6 +32,7 @@ C:\Users\Asus\Documents\MoviesAPI\API\bin\Debug\net6.0\MoviesAPI.deps.json
 C:\Users\Asus\Documents\MoviesAPI\API\bin\Debug\net6.0\MoviesAPI.runtimeconfig.json
 C:\Users\Asus\Documents\MoviesAPI\API\bin\Debug\net6.0\MoviesAPI.dll
 C:\Users\Asus\Documents\MoviesAPI\API\bin\Debug\net6.0\MoviesAPI.pdb
+C:\Users\Asus\Documents\MoviesAPI\API\bin\Debug\net6.0\MoviesAPI.xml
 C:\Users\Asus\Documents\MoviesAPI\API\bin\Debug\net6.0\MailKit.dll
 C:\Users\Asus\Documents\MoviesAPI\API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Asus\Documents\MoviesAPI\API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
@@ -64,6 +65,7 @@ C:\Users\Asus\Documents\MoviesAPI\API\obj\Debug\net6.0\scopedcss\bundle\MoviesAP
 C:\Users\Asus\Documents\MoviesAPI\API\obj\Debug\net6.0\MoviesAPI.csproj.CopyComplete
 C:\Users\Asus\Documents\MoviesAPI\API\obj\Debug\net6.0\MoviesAPI.dll
 C:\Users\Asus\Documents\MoviesAPI\API\obj\Debug\net6.0\refint\MoviesAPI.dll
+C:\Users\Asus\Documents\MoviesAPI\API\obj\Debug\net6.0\MoviesAPI.xml
 C:\Users\Asus\Documents\MoviesAPI\API\obj\Debug\net6.0\MoviesAPI.pdb
 C:\Users\Asus\Documents\MoviesAPI\API\obj\Debug\net6.0\MoviesAPI.genruntimeconfig.cache
 C:\Users\Asus\Documents\MoviesAPI\API\obj\Debug\net6.0\ref\MoviesAPI.dll

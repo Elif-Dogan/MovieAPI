@@ -22,6 +22,7 @@ namespace API.Controllers
             _contextAccessor = contextAccessor;
             _cache = cache;
         }
+        
         [AllowAnonymous]
         [HttpGet("/RequestToken")]
         public IActionResult RequestToken()
@@ -39,6 +40,7 @@ namespace API.Controllers
         
         /// <summary>
         /// Kullanıcı adı, şifre ve request token ile sisteme giriş yapıp geriye yeni bir request token döndürür.
+        /// Dönen bearer token ile de apiye giriş sağlanır.
         /// </summary>
         [AllowAnonymous]
         [HttpPost("/LoginWithToken")]
@@ -75,6 +77,10 @@ namespace API.Controllers
                 return Unauthorized(ex.Message);
             }
         }
+
+        /// <summary>
+        /// LoginWithToken'dan dönen request_token ile işlem yapılır.Geriye session_id döndürür ve themoviedb'ye erişim sağlanmış olur. 
+        /// </summary>
         [HttpPost("/GetSession")]
         public IActionResult GetSession(DTOLoginSessionIstek _userIstek)
         {

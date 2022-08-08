@@ -9,6 +9,10 @@ namespace API.Controllers
     [ApiController]
     public class MovieController : ControllerBase
     {
+        /// <summary>
+        /// Sayfa sayfa film bilgilerini getirir.
+        /// </summary>
+ 
         [HttpGet("GetMovies/{page}")]
         public IActionResult GetMovies(int page)
         {
@@ -23,6 +27,9 @@ namespace API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        /// <summary>
+        /// Id'ye göre film bilgilerini getirir.
+        /// </summary>
         
         [HttpGet("GetMovieById/{movieId}")]
         public IActionResult GetMovieById(int movieId)
@@ -38,7 +45,36 @@ namespace API.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
+         /// <summary>
+        /// Filme ait olan yorumları ve yazarları getirir.
+        /// </summary>
+        [AllowAnonymous]
+        [HttpGet("/GetMovieNotes/{movieId}")]
+        public IActionResult GetMovieNotes(int movieId)
+        {
+            try
+            {
+                DomainMovie _userLogin = new DomainMovie();
+                return Ok(_userLogin.GetNotesByMovieId(movieId));
+                    
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        /// <summary>
+        /// Filme puan vermeyi sağlar.
+        /// </summary>
+        /// <remarks>
+        /// POST /RateMovie
+        ///   
+        ///       MovieId: 12345   
+        ///       Value: 1...10 arasında bir sayı.
+        ///       Note: "abcdef" 
+        ///
+        /// </remarks>
+        [AllowAnonymous]
         [HttpPost("/RateMovie")]
         public IActionResult RateMovie(DTOMovieRateIstek _userIstek)
         {
@@ -52,7 +88,9 @@ namespace API.Controllers
                 return BadRequest(ex.Message);
             }
         }
-[AllowAnonymous]
+        /// <summary>
+        /// Film önerisini mail olarak gönderir.
+        /// </summary>
         [HttpPost("/RecommendMovie")]
         public IActionResult RecommendMovie(DTOMovieRecommendIstek _userIstek)
         {

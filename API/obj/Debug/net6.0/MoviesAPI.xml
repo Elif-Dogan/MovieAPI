@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MoviesAPI</name>
+    </assembly>
+    <members>
+        <member name="M:API.Controllers.LoginController.LoginWithToken(DataTransferObject.Login.DTOLoginSessionWithLoginIstek)">
+            <summary>
+            Kullanıcı adı, şifre ve request token ile sisteme giriş yapıp geriye yeni bir request token döndürür.
+            Dönen bearer token ile de apiye giriş sağlanır.
+            </summary>
+        </member>
+        <member name="M:API.Controllers.LoginController.GetSession(DataTransferObject.Login.DTOLoginSessionIstek)">
+            <summary>
+            LoginWithToken'dan dönen request_token ile işlem yapılır.Geriye session_id döndürür ve themoviedb'ye erişim sağlanmış olur. 
+            </summary>
+        </member>
+        <member name="M:API.Controllers.MovieController.GetMovies(System.Int32)">
+            <summary>
+            Sayfa sayfa film bilgilerini getirir.
+            </summary>
+        </member>
+        <member name="M:API.Controllers.MovieController.GetMovieById(System.Int32)">
+            <summary>
+            Id'ye göre film bilgilerini getirir.
+            </summary>
+        </member>
+        <member name="M:API.Controllers.MovieController.GetMovieNotes(System.Int32)">
+            <summary>
+            Filme ait olan yorumları ve yazarları getirir.
+            </summary>
+        </member>
+        <member name="M:API.Controllers.MovieController.RateMovie(DataTransferObject.Movie.DTOMovieRateIstek)">
+             <summary>
+             Filme puan vermeyi sağlar.
+             </summary>
+             <remarks>
+             POST /RateMovie
+               
+                   MovieId: 12345   
+                   Value: 1...10 arasında bir sayı.
+                   Note: "abcdef" 
+            
+             </remarks>
+        </member>
+        <member name="M:API.Controllers.MovieController.RecommendMovie(DataTransferObject.Movie.DTOMovieRecommendIstek)">
+            <summary>
+            Film önerisini mail olarak gönderir.
+            </summary>
+        </member>
+        <member name="M:API.Controllers.UserController.GetAccountDetails(System.String)">
+            <summary>
+            Kullanıcı account detaylarını getirir.
+            </summary>
+        </member>
+        <member name="M:API.Controllers.UserController.GetRatedMovies(System.String,System.Int32)">
+            <summary>
+            Kullanıcının puan verdiği filmleri getirir.
+            </summary>
+        </member>
+    </members>
+</doc>
